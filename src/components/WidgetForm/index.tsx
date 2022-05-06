@@ -3,6 +3,8 @@ import bugImageUrl from '../../assets/bug.svg';
 import ideaImageUrl from '../../assets/idea.svg';
 import thoughtImageUrl from '../../assets/thought.svg';
 import { CloseButton } from '../CloseButton';
+import { FeedbackContentStep } from './Steps/FeedbackContentStep';
+import { FeedbackTypeStep } from './Steps/FeedbackTypeStep';
 
 export const feedbackTypes = {
     BUG: {
@@ -48,24 +50,9 @@ export function WidgetForm() {
             </header>
 
             { !feedbackType ? (
-                        <div className="flex py-8 gap-2 w-full">
-                        {Object.entries(feedbackTypes).map(([key, value]) => {
-                            console.log(key, value);
-                            return (
-                                <button
-                                    type="button"
-                                    key={key}
-                                    onClick={() => setFeedbackType(key as FeedbackType)}
-                                    className="bg-zinc-800  rounded-lg py-5 w-24 flex-1 flex flex-col items-center gap-2 border-2 border-transparent hover:border-brand-500 focus:border-brand-500 focus:outline-none"
-                                >
-                                    <img src={value.image.source} alt={value.image.alt} />
-                                    <span>{value.title}</span>
-                                </button>
-                            )
-                        })}
-                    </div>
+                <FeedbackTypeStep onFeedbackTypeChanged={setFeedbackType} />
             ) : (
-                <p>Hellow</p>
+                <FeedbackContentStep></FeedbackContentStep>
             )
 
 
