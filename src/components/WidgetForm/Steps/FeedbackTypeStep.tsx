@@ -9,7 +9,7 @@ export function FeedbackTypeStep(props: FeedbackTypeStepProps) {
     return (
         <>
             <header>
-                <span className="text-xl çeading-6">
+                <span className="text-xl leading-6">
                     Deixe seu feedback
                 </span>
                 <CloseButton></CloseButton>
