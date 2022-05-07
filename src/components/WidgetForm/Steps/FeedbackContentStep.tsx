@@ -44,7 +44,7 @@ export function FeedbackContentStep({
                 </textarea>
                 <footer className="flex gap-2 mt-2">
                     <ScreenshotButton 
-                        /*screenshot={screenshot}*/
+                        screenshot={screenshot}
                         onScreenshotTook={setScreenShot}
                     />
                     <button
